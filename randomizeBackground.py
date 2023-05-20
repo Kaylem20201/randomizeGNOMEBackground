@@ -9,7 +9,6 @@ def main() :
 
     #current background may come from gnome's own folder, check the name at the end instead
     CURR_BACKGROUND_NAME = get_current_gnome_background_name()
-    print(CURR_BACKGROUND_NAME)
 
     random_index = random.randrange(0,len(BACKGROUND_PATHS))
     while (CURR_BACKGROUND_NAME in BACKGROUND_PATHS[random_index]) :
@@ -27,7 +26,6 @@ def get_background_dir() :
 def get_background_paths(background_dir) :
     FILES = list(filter(os.DirEntry.is_file, os.scandir(background_dir)))
     FILENAMES = [x.path for x in FILES]
-    print(FILENAMES)
     return FILENAMES
 
 def get_current_gnome_background_name() :
